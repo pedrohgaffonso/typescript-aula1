@@ -31,3 +31,12 @@ appcolorDiv.innerHTML = `
 <h2>Cor 1: ${color1}</h2>
 <h2>Cor 2: ${color2}</h2>
 `;
+
+let notSure: any =4;
+notSure = 'Maybe I am a string';
+notSure = false; //okay, definilety a boolean
+const anyDiv: HTMLElement = document.getElementById('any');
+anyDiv.innerHTML = `
+<h1>Any variable</h1>
+<h2>${notSure}</h2>
+`;
