@@ -82,10 +82,10 @@ decDiv.innerHTML = `
 <h1>Object</h1>
 `;
 
-let somevalue: any = "this is a string";
+let somevalue: any = 'this is a string';
 let strLength: number = [<string>somevalue].length;
 
-let somevalue2: any = "this is a string";
+let somevalue2: any = 'this is a string';
 let strLength2: number = [somevalue2 as string].length;
 
 const someDiv: HTMLElement = document.getElementById('some');
@@ -93,43 +93,65 @@ someDiv.innerHTML = `
 <h1>Type assertions</h1>
 `;
 
-function sum(n1: number, n2: number): number{
-  return n1+n2;
+function sum(n1: number, n2: number): number {
+  return n1 + n2;
 }
 
-function fullName(pessoa: {name: string, lastname: string}): string{
-  return pessoa.name+" "+pessoa.lastname;
+function fullName(pessoa: { name: string; lastname: string }): string {
+  return pessoa.name + ' ' + pessoa.lastname;
 }
 
 const concatDiv: HTMLElement = document.getElementById('concat');
 concatDiv.innerHTML = `
 <h1>Functions</h1>
-<h2>Soma de 2 e 3: ${sum(2,3)}</h2>
-<h3>Soma de 11 e 329: ${sum(1,329)}</h3>
-<h4>Meu nome completo é ${fullName({lastname:'Affonso',name:'Pedro Henrique Garcia'})}</h4>
+<h2>Soma de 2 e 3: ${sum(2, 3)}</h2>
+<h3>Soma de 11 e 329: ${sum(1, 329)}</h3>
+<h4>Meu nome completo é ${fullName({
+  lastname: 'Affonso',
+  name: 'Pedro Henrique Garcia',
+})}</h4>
 `;
 
-let title: string = "Olá, mundo!";
-let paragraph: string = "Blablabla";
+let title: string = 'Olá, mundo!';
+let paragraph: string = 'Blablabla';
 
 let counter = 0;
 let intervalId = setInterval(() => {
   counter = counter + 1;
   const counterDiv: HTMLElement = document.getElementById('counterDiv');
-  counterDiv.innerHTML = 'Contador: '+counter;
-}, 1000)
+  counterDiv.innerHTML = 'Contador: ' + counter;
+}, 1000);
 
 //Declarando uma função para ser invocada por um evento
-const btn = document.getElementById("appButton");
-btn?.addEventListener("click", alertTsMethod);
-function alertTsMethod(this: HTMLElement, ev: Event){
-  alert("Alertando usando typescript");
+const btn = document.getElementById('appButton');
+btn?.addEventListener('click', alertTsMethod);
+function alertTsMethod(this: HTMLElement, ev: Event) {
+  alert('Alertando usando typescript');
 }
 
 const appH1: HTMLElement = document.getElementById('apph1');
-  appH1.innerHTML = title;
+appH1.innerHTML = title;
 
-  let greeter = new Greeter("Affonso");
+let greeter = new Greeter('Affonso');
 
-  const appgt: HTMLElement = document.getElementById('appgt');
-  appgt.innerHTML = greeter.getGreeting();
+const appgt: HTMLElement = document.getElementById('appgt');
+appgt.innerHTML = greeter.getGreeting();
+
+class Starter {
+  starting: string;
+  constructor(mensage: string) {
+    this.starting = mensage;
+  }
+
+  start() {
+    return 'Hello, ' + this.starting;
+  }
+}
+
+let starter = new Starter('My App');
+
+const classDiv: HTMLElement = document.getElementById('class');
+classDiv.innerHTML = `
+<h1>Classes</h1>
+<h2> ${starter.start()}!</h2>
+`;
