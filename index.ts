@@ -66,3 +66,16 @@ funcDiv.innerHTML = `
 <h2>unusable: ${unusable}</h2>
 <h2>unusable: ${myFunction}</h2>
 `;
+
+/*declare function create(o; object | null): void;
+create({prop; 0}); 
+create(null); 
+create(27);
+create('string');
+create(false);
+*/
+
+const decDiv: HTMLElement = document.getElementById('dec');
+decDiv.innerHTML = `
+<h1>Object</h1>
+`;
