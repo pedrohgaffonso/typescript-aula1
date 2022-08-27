@@ -11,7 +11,7 @@ appDiv.innerHTML = `
 
 let me: [string, number];
 
-me = ['Pedro Affonso', 27];
+me = ['Pedro', 27];
 
 const appmeDiv: HTMLElement = document.getElementById('appme');
 appmeDiv.innerHTML = `
@@ -89,4 +89,19 @@ let strLength2: number = [somevalue2 as string].length;
 const someDiv: HTMLElement = document.getElementById('some');
 someDiv.innerHTML = `
 <h1>Type assertions</h1>
+`;
+
+function sum(n1: number, n2: number): number{
+  return n1+n2;
+}
+function fullName(pessoa: {name: string, lastname: string}): string{
+  return pessoa.name+" "+pessoa.lastname;
+}
+
+const concatDiv: HTMLElement = document.getElementById('concat');
+concatDiv.innerHTML = `
+<h1>Functions</h1>
+<h2>Soma de 2 e 3: ${sum(2,3)}</h2>
+<h2>Soma de 11 e 329: ${sum(1,329)}</h2>
+<h2>Meu nome completo é ${fullName({lastname:'Affonso',name:'Pedro Henrique Garcia'})}</h2>
 `;
