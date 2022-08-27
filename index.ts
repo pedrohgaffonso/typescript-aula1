@@ -1,3 +1,5 @@
+import { Greeter } from './home';
+
 let list: number[] = [1, 2, 3];
 
 let otherList: Array<number> = [1, 2, 3];
@@ -94,6 +96,7 @@ someDiv.innerHTML = `
 function sum(n1: number, n2: number): number{
   return n1+n2;
 }
+
 function fullName(pessoa: {name: string, lastname: string}): string{
   return pessoa.name+" "+pessoa.lastname;
 }
@@ -114,7 +117,7 @@ let intervalId = setInterval(() => {
   counter = counter + 1;
   const counterDiv: HTMLElement = document.getElementById('counterDiv');
   counterDiv.innerHTML = 'Contador: '+counter;
-}, 1000);
+}, 1000)
 
 //Declarando uma função para ser invocada por um evento
 const btn = document.getElementById("appButton");
@@ -125,3 +128,8 @@ function alertTsMethod(this: HTMLElement, ev: Event){
 
 const appH1: HTMLElement = document.getElementById('apph1');
   appH1.innerHTML = title;
+
+  let greeter = new Greeter("Affonso");
+
+  const appgt: HTMLElement = document.getElementById('appgt');
+  appgt.innerHTML = greeter.getGreeting();
