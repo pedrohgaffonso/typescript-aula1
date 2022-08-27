@@ -6,7 +6,7 @@ const appDiv: HTMLElement = document.getElementById('app');
 appDiv.innerHTML = `
 <h1>Array declaration</h1>
 <h2>list: ${list}</h2>
-<h2>other list: ${otherList}<?h2>
+<h3>other list: ${otherList}<?h3>
 `;
 
 let me: [string, number];
@@ -37,7 +37,7 @@ const appcolorDiv: HTMLElement = document.getElementById('appcolor');
 appcolorDiv.innerHTML = `
 <h1>Enumerated types </h1>
 <h2>Cor 1: ${color1}</h2>
-<h2>Cor 2: ${color2}</h2>
+<h3>Cor 2: ${color2}</h3>
 `;
 
 let notSure: any = 4;
@@ -64,7 +64,7 @@ const funcDiv: HTMLElement = document.getElementById('func');
 funcDiv.innerHTML = `
 <h1>Void</h1>
 <h2>unusable: ${unusable}</h2>
-<h2>unusable: ${myFunction}</h2>
+<h3>unusable: ${myFunction}</h3>
 `;
 
 /*declare function create(o; object | null): void;
@@ -102,6 +102,26 @@ const concatDiv: HTMLElement = document.getElementById('concat');
 concatDiv.innerHTML = `
 <h1>Functions</h1>
 <h2>Soma de 2 e 3: ${sum(2,3)}</h2>
-<h2>Soma de 11 e 329: ${sum(1,329)}</h2>
-<h2>Meu nome completo é ${fullName({lastname:'Affonso',name:'Pedro Henrique Garcia'})}</h2>
+<h3>Soma de 11 e 329: ${sum(1,329)}</h3>
+<h4>Meu nome completo é ${fullName({lastname:'Affonso',name:'Pedro Henrique Garcia'})}</h4>
 `;
+
+let title: string = "Olá, mundo!";
+let paragraph: string = "Blablabla";
+
+let counter = 0;
+let intervalId = setInterval(() => {
+  counter = counter + 1;
+  const counterDiv: HTMLElement = document.getElementById('counterDiv');
+  counterDiv.innerHTML = 'Contador: '+counter;
+}, 1000);
+
+//Declarando uma função para ser invocada por um evento
+const btn = document.getElementById("appButton");
+btn?.addEventListener("click", alertTsMethod);
+function alertTsMethod(this: HTMLElement, ev: Event){
+  alert("Alertando usando typescript");
+}
+
+const appH1: HTMLElement = document.getElementById('apph1');
+  appH1.innerHTML = title;
