@@ -79,3 +79,14 @@ const decDiv: HTMLElement = document.getElementById('dec');
 decDiv.innerHTML = `
 <h1>Object</h1>
 `;
+
+let somevalue: any = "this is a string";
+let strLength: number = [<string>somevalue].length;
+
+let somevalue2: any = "this is a string";
+let strLength2: number = [somevalue2 as string].length;
+
+const someDiv: HTMLElement = document.getElementById('some');
+someDiv.innerHTML = `
+<h1>Type assertions</h1>
+`;
